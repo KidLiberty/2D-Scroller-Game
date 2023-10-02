@@ -9,6 +9,7 @@ public class ItemCollector : MonoBehaviour
     private int kiwis = 0;
 
     [SerializeField] private Text kiwisText;
+    [SerializeField] private AudioSource collectItemSound;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,6 +18,7 @@ public class ItemCollector : MonoBehaviour
             Destroy(collision.gameObject); // ref to Kiwi
             kiwis++;
             kiwisText.text = "Kiwis: " + kiwis;
+            collectItemSound.Play();
         }
     }
 
